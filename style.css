@@ -1,0 +1,215 @@
+:root {
+    --primary-color: #4CAF50; /* Hijau Cerah */
+    --secondary-color: #FFA726; /* Oranye */
+    --accent-color: #2196F3; /* Biru */
+    --bg-color: #f0f2f5; /* Abu-abu terang */
+    --text-color-dark: #333;
+    --text-color-light: #fff;
+    --card-bg: #ffffff;
+    --border-radius: 12px;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: var(--bg-color);
+    color: var(--text-color-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+    overflow-y: auto; /* Agar bisa discroll jika konten panjang */
+}
+
+.container {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 30px 40px;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.section {
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    height: 0;
+    overflow: hidden;
+    padding: 0;
+}
+
+/* --- Start Section --- */
+.logo {
+    max-width: 150px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+h1 {
+    color: var(--primary-color);
+    font-size: 2.2em;
+    margin-bottom: 15px;
+}
+
+h2 {
+    color: var(--text-color-dark);
+    font-size: 1.8em;
+    margin-bottom: 25px;
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+}
+
+.primary-btn {
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+}
+
+.primary-btn:hover {
+    background-color: #43A047; /* Slightly darker */
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(76, 175, 80, 0.5);
+}
+
+.secondary-btn {
+    background-color: var(--accent-color);
+    color: var(--text-color-light);
+    box-shadow: 0 5px 15px rgba(33, 150, 243, 0.4);
+    margin-top: 20px;
+}
+
+.secondary-btn:hover {
+    background-color: #1976D2; /* Slightly darker */
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(33, 150, 243, 0.5);
+}
+
+
+/* --- Question Section --- */
+.question-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    font-weight: 600;
+    color: #666;
+    font-size: 0.95em;
+}
+
+.progress-bar-container {
+    width: 70%;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    height: 8px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+    transition: width 0.4s ease-in-out;
+}
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.option-btn {
+    background-color: var(--card-bg);
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px 20px;
+    font-size: 1.05em;
+    color: var(--text-color-dark);
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 100%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.option-btn:hover {
+    border-color: var(--primary-color);
+    background-color: #e8f5e9; /* Light green hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.2);
+}
+
+/* --- Result Section --- */
+.trophy-icon {
+    font-size: 5em;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+    animation: bounceIn 0.8s ease-out;
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.3); opacity: 0; }
+    50% { transform: scale(1.1); opacity: 1; }
+    70% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+}
+
+#result-text strong {
+    color: var(--primary-color);
+}
+
+/* --- Responsiveness --- */
+@media (max-width: 768px) {
+    .container {
+        padding: 25px 25px;
+        margin: 10px;
+    }
+    h1 {
+        font-size: 1.8em;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+    p {
+        font-size: 1em;
+    }
+    .btn {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+    .question-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .progress-bar-container {
+        width: 100%;
+    }
+}

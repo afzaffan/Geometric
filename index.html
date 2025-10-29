@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tes Minat Divisi Kepanitiaan</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://www.flaticon.com/svg/v2/search/icon/2941/2941914.svg" type="image/svg+xml">
+</head>
+<body>
+    <div class="container">
+        <div id="start-section" class="section active">
+            <img src="https://via.placeholder.com/300x200?text=Logo+Acara" alt="Logo Acara" class="logo">
+            <h1>Temukan Divisi Terbaikmu!</h1>
+            <p>Jawab beberapa pertanyaan untuk mengetahui divisi kepanitiaan mana yang paling cocok dengan minat dan bakatmu.</p>
+            <button id="start-btn" class="btn primary-btn">Mulai Tes</button>
+        </div>
+
+        <div id="question-section" class="section hidden">
+            <div class="question-header">
+                <span id="question-counter">Pertanyaan 1/X</span>
+                <div class="progress-bar-container">
+                    <div id="progress-bar" class="progress-bar"></div>
+                </div>
+            </div>
+            <h2 id="question-text"></h2>
+            <div id="options" class="options-container">
+                </div>
+        </div>
+
+        <div id="result-section" class="section hidden">
+            <div class="trophy-icon">🏆</div>
+            <h2>Selamat!</h2>
+            <p id="result-text"></p>
+            <button id="restart-btn" class="btn secondary-btn">Ulangi Tes</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
